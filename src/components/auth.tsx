@@ -12,7 +12,7 @@ export const Auth = component$(() => {
   const passwordSignal = useSignal('');
   const helperTextStore = useStore<HelperText>({ error: null, text: null });
 
-  const handleLogin = $(async (type: 'LOGIN' | unknown) => {
+  const handleLogin = $(async (type: 'LOGIN' | 'REGISTER' | unknown) => {
     const {
       data: { user },
       error,
