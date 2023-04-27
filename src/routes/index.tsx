@@ -1,8 +1,10 @@
 import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { supabase } from '~/lib/db';
+
 import { Auth } from '~/components/auth';
+import { Home } from '~/components/home';
 import type { User } from '@supabase/supabase-js';
+import { supabase } from '~/lib/db';
 
 export default component$(() => {
   const userSignal = useSignal<User | null>();
@@ -24,8 +26,9 @@ export default component$(() => {
   });
   return (
     <div class="w-full h-full bg-gray-200">
-      {userSignal.value && <div>home</div>}
-      {!userSignal.value && (
+      {userSignal.value ? (
+        <Home user={userSignal.value} />
+      ) : (
         <div class="min-w-full min-h-screen flex items-center justify-center">
           <Auth />
         </div>

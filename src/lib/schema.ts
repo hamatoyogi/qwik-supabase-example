@@ -38,3 +38,5 @@ export interface Database {
     }
   }
 }
+
+export type TodoType = Database['public']['Tables']['todos']['Row'];
