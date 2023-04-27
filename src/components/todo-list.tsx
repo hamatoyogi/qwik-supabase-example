@@ -62,7 +62,7 @@ export const TodoList = component$((props: { user: User }) => {
         class="flex gap-2 my-2"
       >
         <input
-          class="rounded w-full p-2"
+          class="rounded w-full p-2 placeholder:text-white"
           type="text"
           placeholder="make coffee"
           bind:value={newTaskTextSignal}

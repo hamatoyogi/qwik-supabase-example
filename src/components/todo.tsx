@@ -36,7 +36,7 @@ export const Todo = component$(
           </div>
           <div>
             <input
-              class="cursor-pointer"
+              class="cursor-pointer placeholder:text-white"
               type="checkbox"
               onChange$={$(() => {
                 toggle(props.todo);

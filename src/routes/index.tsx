@@ -25,7 +25,7 @@ export default component$(() => {
     };
   });
   return (
-    <div class="w-full h-full bg-gray-200">
+    <div class="w-full h-full">
       {userSignal.value ? (
         <Home user={userSignal.value} />
       ) : (
@@ -38,11 +38,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'Qwik Supabase Todo example',
   meta: [
     {
       name: 'description',
-      content: 'Qwik site description',
+      content: 'Qwik Supabase Todo example',
     },
   ],
 };
