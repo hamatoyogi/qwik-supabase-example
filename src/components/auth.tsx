@@ -36,12 +36,12 @@ export const Auth = component$(() => {
     }
   });
 
-  const handleOAuthLogin = $(async (provider: Provider) => {
-    // You need to enable the third party auth you want in Authentication > Settings
-    // Read more on: https://supabase.com/docs/guides/auth#third-party-logins
-    const { error } = await supabase.auth.signInWithOAuth({ provider });
-    if (error) console.log('Error: ', error.message);
-  });
+  // const handleOAuthLogin = $(async (provider: Provider) => {
+  //   // You need to enable the third party auth you want in Authentication > Settings
+  //   // Read more on: https://supabase.com/docs/guides/auth#third-party-logins
+  //   const { error } = await supabase.auth.signInWithOAuth({ provider });
+  //   if (error) console.log('Error: ', error.message);
+  // });
 
   return (
     <div class="w-full h-full sm:h-auto sm:w-2/5 max-w-sm p-5 bg-white shadow flex flex-col text-base">
