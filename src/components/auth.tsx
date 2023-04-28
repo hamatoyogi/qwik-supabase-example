@@ -1,4 +1,4 @@
-// import type { Provider } from '@supabase/supabase-js';
+import type { Provider } from '@supabase/supabase-js';
 
 import { supabase } from '~/lib/db';
 import { component$, $, useSignal, useStore } from '@builder.io/qwik';
@@ -37,12 +37,12 @@ export const Auth = component$(() => {
     }
   });
 
-  // const handleOAuthLogin = $(async (provider: Provider) => {
-  //   // You need to enable the third party auth you want in Authentication > Settings
-  //   // Read more on: https://supabase.com/docs/guides/auth#third-party-logins
-  //   const { error } = await supabase.auth.signInWithOAuth({ provider });
-  //   if (error) console.log('Error: ', error.message);
-  // });
+  const handleOAuthLogin = $(async (provider: Provider) => {
+    // You need to enable the third party auth you want in Authentication > Settings
+    // Read more on: https://supabase.com/docs/guides/auth#third-party-logins
+    const { error } = await supabase.auth.signInWithOAuth({ provider });
+    if (error) console.log('Error: ', error.message);
+  });
 
   return (
     <div class="w-full h-full sm:h-auto sm:w-2/5 max-w-sm p-5 bg-white shadow flex flex-col text-base">
@@ -101,8 +101,8 @@ export const Auth = component$(() => {
           </button>
         </span>
       </div>
-      {/* TODO: Handle login with providers */}
-      {/* <div class="mt-3">
+
+      <div class="mt-3">
         <div class="relative">
           <div class="absolute inset-0 flex items-center">
             <div class="w-full mx-1.5 border-t border-gray-300" />
@@ -124,7 +124,7 @@ export const Auth = component$(() => {
               </button>
             </span>
           </div>
-          <div class="mt-3">
+          {/* <div class="mt-3">
             <span class="block rounded-md shadow-sm">
               <button
                 onClick$={() => handleOAuthLogin('google')}
@@ -134,9 +134,9 @@ export const Auth = component$(() => {
                 Google
               </button>
             </span>
-          </div>
+          </div> */}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 });
