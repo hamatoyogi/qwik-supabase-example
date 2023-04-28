@@ -100,7 +100,8 @@ export const Auth = component$(() => {
           </button>
         </span>
       </div>
-      <div class="mt-3">
+      {/* TODO: Handle login with providers */}
+      {/* <div class="mt-3">
         <div class="relative">
           <div class="absolute inset-0 flex items-center">
             <div class="w-full mx-1.5 border-t border-gray-300" />
@@ -134,7 +135,7 @@ export const Auth = component$(() => {
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 });
